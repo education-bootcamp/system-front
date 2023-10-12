@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
-import * as http from "http";
+import {map, Observable} from "rxjs";
+
 
 @Injectable({
   providedIn: 'root'
@@ -23,4 +23,16 @@ export class AuthService {
       password:password
     });
   }
+
+  public login(email:any,password:any):Observable<any>{
+    return this.http.post<any>('localhost:8000/login',{
+      email:email,
+      password:password
+    },
+      {observe:'response' as 'body'}
+      ).pipe(map(data=>{
+        return data;
+    }))
+  }
+
 }
