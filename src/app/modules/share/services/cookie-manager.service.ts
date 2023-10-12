@@ -8,7 +8,6 @@ export class CookieManagerService {
 
   constructor(private cookieService:CookieService) { }
 
-
   public setCookie(token:string){
     this.cookieService.set('token',token);
   }
