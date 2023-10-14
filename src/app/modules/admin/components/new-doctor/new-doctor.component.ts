@@ -10,7 +10,7 @@ export class NewDoctorComponent implements OnInit{
   constructor(private router:Router) {
   }
   ngOnInit(): void {
-    this.router.navigateByUrl('/admin/admin-verification');
+    // enable route guard
   }
 
 }
