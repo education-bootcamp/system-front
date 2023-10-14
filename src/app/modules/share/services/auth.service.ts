@@ -34,5 +34,7 @@ export class AuthService {
         return data;
     }))
   }
-
+public verify(type:string):Observable<any>{
+    return this.http.get('http://localhost:8000/api/v1/users/verify?type='+type);
+}
 }
