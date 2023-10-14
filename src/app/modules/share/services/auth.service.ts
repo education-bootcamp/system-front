@@ -37,4 +37,17 @@ export class AuthService {
 public verify(type:string):Observable<any>{
     return this.http.get('http://localhost:8000/api/v1/users/verify?type='+type);
 }
+
+//==============Doctor=================
+  public saveDoctor(name:any,address:any,salary:any,contact:any):Observable<any>{
+    return this.http.post('http://localhost:8000/api/v1/doctors',{
+      name:name,
+      address:address,
+      salary:salary,
+      contact:contact
+    });
+  }
+  public getDoctors():Observable<any>{
+    return this.http.get('http://localhost:8000/api/v1/doctors/list?searchText=&page=0&size=10');
+  }
 }
