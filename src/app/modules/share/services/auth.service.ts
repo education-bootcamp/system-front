@@ -16,7 +16,7 @@ export class AuthService {
     if (email=='doc@gmail.com'){
       id=2;
     }
-    return this.http.post('localhost:8000/api/v1/users/visitor/signup',{
+    return this.http.post('http://localhost:8000/api/v1/users/visitor/signup',{
       id:id,
       fullName:fullName,
       email:email,
@@ -25,8 +25,8 @@ export class AuthService {
   }
 
   public login(email:any,password:any):Observable<any>{
-    return this.http.post<any>('localhost:8000/login',{
-      email:email,
+    return this.http.post<any>('http://localhost:8000/login',{
+      username:email,
       password:password
     },
       {observe:'response' as 'body'}
